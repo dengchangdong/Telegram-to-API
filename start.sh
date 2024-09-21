@@ -8,6 +8,11 @@ if [ -n "$1" ]; then
   WORKERS=$1
 else
   WORKERS=$(( $(nproc) * 2 + 1 ))
+
+  MAX_WORKERS=10
+  if [ "$WORKERS" -gt "$MAX_WORKERS" ]; then
+    WORKERS=$MAX_WORKERS
+  fi
 fi
 
 # Run the uvicorn server with the specified settings
