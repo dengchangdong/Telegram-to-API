@@ -15,4 +15,4 @@ EXPOSE $PORT
 HEALTHCHECK --interval=30s --timeout=5s \
   CMD curl -fI http://localhost:${PORT}/healthz || exit 1
 
-CMD ["bash", "start.sh"]
+CMD ["bash", "start.sh 1"]
