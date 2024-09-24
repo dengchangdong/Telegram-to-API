@@ -4,7 +4,4 @@
 PORT=${PORT:-8000}
 
 # Run the Hypercorn server
-UVICORN_CMD="uvicorn app.main:app --host=0.0.0.0 --port=$PORT --workers=1 --loop asyncio"
-
-# Execute the command
-$UVICORN_CMD
+uvicorn app.main:app --workers 1 --host=0.0.0.0 --port=$PORT
